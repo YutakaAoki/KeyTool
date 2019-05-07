@@ -50,9 +50,11 @@ Even if you don't have tee command, you can build this project.
 [[Important]]
 
 The base path must NOT have any spaces.
-The reason is that "b-create-java-list.bat" uses simple
+The reason is that since "b-create-java-list.bat" uses simple
 cmd.exe's dir /S /B command to create the list of *.java
-under ./src directory.
+under ./src directory and it is passed to javac.exe command
+with @javalist.txt, if it includes any spaces, javac.exe
+command will take one filename as two or more filenames.
 
 For example :
 
@@ -60,13 +62,13 @@ For example :
 C:\github\KeyTool\.git        # This is not needed to exist.
 C:\github\KeyTool\src
 C:\github\KeyTool\build
-C:\github\KeyTool\・・・
+C:\github\KeyTool\...
 
 [2] bad example
-C:\Users\Yutaka Aoki\.git     # This is not needed to exist.
-C:\Users\Yutaka Aoki\src
-C:\Users\Yutaka Aoki\build
-C:\Users\Yutaka Aoki\・・・
+C:\Users\Taro Yamada\.git     # This is not needed to exist.
+C:\Users\Taro Yamada\src
+C:\Users\Taro Yamada\build
+C:\Users\Taro Yamada\...
 
 =======================================================
 [[How to build]]
