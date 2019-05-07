@@ -1,6 +1,7 @@
 # KeyTool
 KeyTool runs in the actual Android device for standalone development for *.apk.
 
+
 [From whom]
 
 Yutaka Aoki(Japanese), NOWSMARTSOFT.
@@ -44,16 +45,52 @@ I choosed necessary sources and changed or commented out some codes.
 
 1. Windows OS  (I have been using Win7, 64BIT, Pro.)
 2. JDK
-3. cygwin's tee (d:\cygwin\tee), if any.
+3. Android SDK
+4. cygwin's tee (d:\cygwin\tee), if any.
 
 Even if you don't have tee command, you can build this project.
 
+------------------------------------------------------------------------
+[[Important]]
+
+The base path must NOT have any spaces.
+The reason is that "b-create-java-list.bat" uses simple
+cmd.exe's dir /S /B command to create the list of *.java
+under ./src directory.
+
+For example :
+
+[1] good example
+C:\github\KeyTool\.git        # This is not needed to exist.
+C:\github\KeyTool\src
+C:\github\KeyTool\build
+C:\github\KeyTool\・・・
+
+[2] bad example
+C:\Users\Yutaka Aoki\.git     # This is not needed to exist.
+C:\Users\Yutaka Aoki\src
+C:\Users\Yutaka Aoki\build
+C:\Users\Yutaka Aoki\・・・
 
 =======================================================
+[[How to build]]
+
+This project use only cmd.exe's *.BAT file, javac.exe,
+dx.bat to build the binary from source code.
+
+javac.exe  : from JDK 1.7 or JDK 1.8
+dx.bat     : from Android SDK
+*.BAT      : from the source tree of this project.
+
+------------------------------------
 [First step to build]
 
 -------------------------------------------------------
-[1] create javalist.txt
+[1] set current directory
+
+$ cd C:\github\KeyTool
+
+[2] create javalist.txt
 
 list up *.java files under src/ to the file javalist.txt.
 
@@ -63,12 +100,12 @@ $ b-create-java-list.bat
 [[If you build with tee]]
 
 -------------------------------------------------------
-[2] src/*.java ---> javac ---> build/obj/*.class
+[3] src/*.java ---> javac ---> build/obj/*.class
 
 $ b-compile.bat
 
 -------------------------------------------------------
-[3] build/obj/*.class ---> dx.bat ---> build/apk/keytool.dex
+[4] build/obj/*.class ---> dx.bat ---> build/apk/keytool.dex
 
 $ b-create-dex.bat
 
@@ -77,17 +114,31 @@ $ b-create-dex.bat
 [[If you build without tee]]
 
 -------------------------------------------------------
-[2] src/*.java ---> javac ---> build/obj/*.class
+[3] src/*.java ---> javac ---> build/obj/*.class
 
 $ c-compile-wo-tee.bat
 
 -------------------------------------------------------
-[3] build/obj/*.class ---> dx.bat ---> build/apk/keytool.dex
+[4] build/obj/*.class ---> dx.bat ---> build/apk/keytool.dex
 
 $ c-create-dex-wo-tee.bat
 
 =======================================================
 [[Test]]
+
+Test uses build/apk/keytool.dex and adb.exe in host PC.
+
+You needs the following tools and files to test :
+
+1. adb.exe    : Android Debugging Bridge from Android SDK
+
+2. build/apk/keytool.dex : A keytool which format is dalvikvm byte code and is a final
+                           target of this project to build.
+                           But this file is distributed as prebuilt style from git dowonload site.
+
+Since keytool.dex is distributed as prebuilt style from git dowonload site,
+you can test it without any building steps from source codes.
+
 
 ------------------------------------------------
 [1] PC: keytool.dex --> adb push --> andoird: /sdcard/keytool.dex
