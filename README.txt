@@ -1,5 +1,5 @@
 # KeyTool
-KeyTool run in actual Android device for standalone development for *.apk.
+KeyTool runs in the actual Android device for standalone development for *.apk.
 
 [From whom]
 
