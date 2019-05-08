@@ -6,7 +6,7 @@ adb shell rm /sdcard/keystore.jks
 adb shell cd /sdcard "&&" ^
    dalvikvm ^
    -cp keytool.dex ^
-   com.ya.KeyTool.KeyTool ^
+   main ^
    -genkeypair ^
    -keystore keystore.jks ^
    -alias androidkey ^

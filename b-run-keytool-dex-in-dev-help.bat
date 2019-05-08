@@ -4,7 +4,7 @@
 adb shell cd /sdcard "&&" ^
    dalvikvm ^
    -cp keytool.dex ^
-   com.ya.KeyTool.KeyTool
+   main
 
 pause
 

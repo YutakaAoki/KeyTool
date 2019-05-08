@@ -89,7 +89,14 @@ dx.bat     : from Android SDK
 
 $ cd C:\github\KeyTool
 
-[2] create javalist.txt
+------------
+[2] open *.bat and modify an ANDROID_HOME variable.
+
+change this to appropriate path value :
+@set ANDROID_HOME=C:\Android\Sdk
+
+-----------
+[3] create javalist.txt
 
 list up *.java files under src/ to the file javalist.txt.
 

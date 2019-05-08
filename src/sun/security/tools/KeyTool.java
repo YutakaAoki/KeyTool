@@ -4088,6 +4088,8 @@ public final class KeyTool {
      * Prints the usage of this tool.
      */
     private void usage() {
+        System.err.println("Android keytool 2019 ported by Yutaka Aoki.\n");
+        
         if (command != null) {
             System.err.println("keytool " + command +
                     rb.getString(".OPTION."));
