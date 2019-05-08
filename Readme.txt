@@ -146,17 +146,26 @@ Since keytool.dex is distributed as prebuilt style from git download site,
 you can test it without any building steps from source codes.
 
 
-------------------------------------------------
+-------------------------------------------------------
 [1] PC: keytool.dex --> adb push --> andoird: /sdcard/keytool.dex
 
 $ b-push-keytool-dex.bat
 
-----------------------------------------------
+---------------------------------------------------
 [2] output keytool's help message
 
 $ b-run-keytool-dex-in-dev-help.bat
 
-------------------------------------
+
+This is equivalent to the following :
+--------------------------------------
+adb shell cd /sdcard "&&" ^
+   dalvikvm ^
+   -cp keytool.dex ^
+   main
+--------------------------------------
+
+---------------------------------------------
 [3] test keytool
 
 $ b-run-keytool-dex-in-dev-test.bat
@@ -168,7 +177,7 @@ adb shell rm /sdcard/keystore.jks
 adb shell cd /sdcard "&&" ^
    dalvikvm ^
    -cp keytool.dex ^
-   com.ya.KeyTool.KeyTool ^
+   main ^
    -genkeypair ^
    -keystore keystore.jks ^
    -alias androidkey ^
