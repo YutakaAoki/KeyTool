@@ -16,10 +16,8 @@ can be used to create keystore in the actual android device.
 Since keytool.dex is from *.class made fully from *.java, it can be probably
 run in almost all andorid devices.
 
-It is convenient for standalone development of android application.
-
 Probably, the keystore which is created by this tool can be used
-for signing *.apk package.
+for signing *.apk package. But final testing has not been done yet.
 
 Since this tool is a beta version, the full testing has not been done yet.
 
