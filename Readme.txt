@@ -73,7 +73,7 @@ C:\Users\Taro Yamada\...
 =======================================================
 [[How to build]]
 
-This project use only cmd.exe's *.BAT file, javac.exe,
+This project uses only cmd.exe's *.BAT file, javac.exe,
 dx.bat to build the binary from source code.
 
 javac.exe  : from JDK 1.7 or JDK 1.8
