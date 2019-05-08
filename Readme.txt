@@ -134,7 +134,7 @@ $ c-create-dex-wo-tee.bat
 
 Test uses build/apk/keytool.dex and adb.exe in host PC.
 
-You needs the following tools and files to test :
+You need the following tools and files to test :
 
 1. adb.exe    : Android Debugging Bridge from Android SDK
 
