@@ -134,7 +134,7 @@ You needs the following tools and files to test :
                            target of this project to build.
                            But this file is distributed as prebuilt style from git dowonload site.
 
-Since keytool.dex is distributed as prebuilt style from git dowonload site,
+Since keytool.dex is distributed as prebuilt style from git download site,
 you can test it without any building steps from source codes.
 
 
