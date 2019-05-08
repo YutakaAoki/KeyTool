@@ -25,7 +25,7 @@ But dalvikvm executes this keytool.dex directly, and inputs name or
 company name etc. from adb shell for the actual android device,
 and outputs a keystore actually.
 
-I have seen outputed keystore file really in my real amazon Fire 7 tablet.
+I have seen the outputed keystore file really in my real amazon Fire 7 tablet.
 
 But I have not tested signing *.apk with it yet.
 
