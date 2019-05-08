@@ -7,9 +7,11 @@ Date: 2019/05/07
 [What is this ?]
 
 This is a trasnport of KeyTool(Java, JDK 1.7) for android.
+It is convenient for standalone developments of android applications
+for signing *.apk files with a key.
 
-keytool.dex which prebuilt version is included by this project is used to create keystore
-in the actual android device.
+keytool.dex which prebuilt version is included by this project
+can be used to create keystore in the actual android device.
 
 Since keytool.dex is from *.class made fully from *.java, it can be probably
 run in almost all andorid devices.
@@ -21,8 +23,9 @@ for signing *.apk package.
 
 Since this tool is a beta version, the full testing has not been done yet.
 
-But dalvikvm executes this keytool.dex, and inputs name or company name etc.
-from adb shell for the actual android device, and outputs keystore actually.
+But dalvikvm executes this keytool.dex directly, and inputs name or
+company name etc. from adb shell for the actual android device,
+and outputs keystore actually.
 
 I have seen outputed keystore file really in my real amazon Fire 7 tablet.
 
